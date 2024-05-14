@@ -27,7 +27,7 @@ wget https://github.com/Mattaclp/OpenWrt_iqp6000/raw/main/feeds.conf.default
 
 # add helloworld
 #git clone https://github.com/fw876/helloworld.git package/helloworld
-#sed -i '$a src-git helloworld https://github.com/fw876/helloworld.git;master' feeds.conf.default
+sed -i '$a src-git helloworld https://github.com/fw876/helloworld.git;master' feeds.conf.default
 #git clone https://github.com/Mattaclp/helloworld.git package/helloworld
 
 # add passwall
