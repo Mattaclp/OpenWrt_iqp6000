@@ -52,8 +52,8 @@ find package/luci-theme-*/* -type f -name '*luci-theme-*' -print -exec sed -i '/
 #rm -rf feeds/packages/net/curl
 #git clone https://github.com/sbwml/feeds_packages_net_curl feeds/packages/net/curl
 
-#rm -rf feeds/helloworld/chinadns-ng
-#cp -r feeds/passwall_packages/chinadns-ng feeds/helloworld/
+rm -rf feeds/helloworld/chinadns-ng
+cp -r feeds/passwall_packages/chinadns-ng feeds/helloworld/
 
 #luci-app-alist
 #rm -rf feeds/packages/lang/golang
@@ -89,8 +89,8 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-app-argon-config.git packag
 #git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
 
 # hysteria
-#rm -rf /home/openwrt/lede/feeds/helloworld/hysteria
-#cp -r feeds/passwall_packages/hysteria feeds/helloworld/
+rm -rf /home/openwrt/lede/feeds/helloworld/hysteria
+cp -r feeds/passwall_packages/hysteria feeds/helloworld/
 
 # Fix transmission
 #rm -rf feeds/packages/net/transmission/files/transmission.init
