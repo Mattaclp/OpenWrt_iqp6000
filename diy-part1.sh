@@ -11,6 +11,9 @@
 # Uncomment a feed source
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
+rm -rf feeds.conf.default
+wget https://github.com/Mattaclp/OpenWrt_iqp6000/raw/main/feeds.conf.default
+
 # add NanoHatOLED for Neo2
 #sed -i '$a src-git NanoHatOLED https://github.com/ctr54188/NanoHatOLED.git' feeds.conf.default
 #wget https://github.com/ctr54188/NanoHatOLED/raw/master/openwrt/target/linux/sunxi/patches-5.4/499-neo2-enable-i2c.patch
@@ -24,7 +27,7 @@
 
 # add helloworld
 #git clone https://github.com/fw876/helloworld.git package/helloworld
-sed -i '$a src-git helloworld https://github.com/fw876/helloworld.git;master' feeds.conf.default
+#sed -i '$a src-git helloworld https://github.com/fw876/helloworld.git;master' feeds.conf.default
 #git clone https://github.com/Mattaclp/helloworld.git package/helloworld
 
 # add passwall
@@ -45,12 +48,12 @@ sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;ma
 # Add immortalwrt packages
 #sed -i '$a src-git immortalwrtpackages https://github.com/chiwaicw/immortalwrtpackages' feeds.conf.default
 #sed -i '$a src-git immortalwrtluci https://github.com/chiwaicw/immortalwrtluci' feeds.conf.default
-sed -i '$a src-git immortalwrtpackages https://github.com/chiwaicw/immortalwrtpackagesslim2' feeds.conf.default
-sed -i '$a src-git immortalwrtluci https://github.com/chiwaicw/immortalwrtlucislim2' feeds.conf.default
+#sed -i '$a src-git immortalwrtpackages https://github.com/chiwaicw/immortalwrtpackagesslim2' feeds.conf.default
+#sed -i '$a src-git immortalwrtluci https://github.com/chiwaicw/immortalwrtlucislim2' feeds.conf.default
 #svn co https://github.com/chiwaicw/immortalwrtpackages/trunk/net/gowebdav package/lean/gowebdav
 #svn co https://github.com/chiwaicw/immortalwrtluci/trunk/applications/luci-app-gowebdav package/lean/luci-app-gowebdav
-git clone https://github.com/rufengsuixing/luci-app-adguardhome.git
-mv luci-app-adguardhome package/lean/
+#git clone https://github.com/rufengsuixing/luci-app-adguardhome.git
+#mv luci-app-adguardhome package/lean/
 #sed -i '$a src-git projectpackages https://github.com/immortalwrt/packages.git;openwrt-23.05' feeds.conf.default
 #sed -i '$a src-git projectluci https://github.com/immortalwrt/luci.git;openwrt-23.05' feeds.conf.default
 #sed -i '$a src-git packagesImmortalWrt https://github.com/kwokwai6618/packages-ImmortalWrt.git;openwrt-18.06' feeds.conf.default
@@ -82,11 +85,11 @@ mv luci-app-adguardhome package/lean/
 #mv luci-app-argon-config package/lean/
 
 # add vssr
-git clone https://github.com/jerrykuku/lua-maxminddb.git
-mv lua-maxminddb package/lean/
+#git clone https://github.com/jerrykuku/lua-maxminddb.git
+#mv lua-maxminddb package/lean/
 #git clone https://github.com/jerrykuku/luci-app-vssr.git
-git clone https://github.com/Mattaclp/luci-app-vssr.git
-mv luci-app-vssr package/lean/
+#git clone https://github.com/Mattaclp/luci-app-vssr.git
+#mv luci-app-vssr package/lean/
 
 # add luci-app-casaJJJos
 #git clone https://github.com/chiwaicw/luci-app-casaJJJos.git
@@ -164,8 +167,8 @@ mv luci-app-vssr package/lean/
 
 # add koolproxyR
 #git clone https://github.com/Beginner-Go/luci-app-koolproxyR
-git clone https://github.com/chiwaicw/luci-app-koolproxyR
-mv luci-app-koolproxyR package/lean/
+#git clone https://github.com/chiwaicw/luci-app-koolproxyR
+#mv luci-app-koolproxyR package/lean/
 
 # add serverchan
 #git clone https://github.com/tty228/luci-app-serverchan.git package/lean/luci-app-serverchan
@@ -183,8 +186,14 @@ rm -rf package/lean/OpenClash
 #git clone https://github.com/frainzy1477/luci-app-clash.git package/lean/luci-app-clash  #clash出国软件
 
 #添加smartdns
-#git clone https://github.com/pymumu/openwrt-smartdns package/smartdns
-#git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns
+git clone https://github.com/pymumu/openwrt-smartdns package/smartdns
+git clone -b master https://github.com/pymumu/luci-app-smartdns.git package/luci-app-smartdns
+
+# msd_lite
+git clone --depth=1 https://github.com/ximiTech/luci-app-msd_lite package/luci-app-msd_lite
+git clone --depth=1 https://github.com/ximiTech/msd_lite package/msd_lite
+
+git clone  https://github.com/gdy666/luci-app-lucky.git package/lucky
 
 # Add po2lmo
 #git clone https://github.com/openwrt-dev/po2lmo.git
