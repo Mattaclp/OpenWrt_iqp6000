@@ -30,6 +30,7 @@ env:
   REPO_BRANCH: main
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: ipq6000test.config
+  PATCHES_FILE_1: patches/0001-show-soc-status-on-luci.patch
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2-alist.sh
   UPLOAD_BIN_DIR: true
@@ -94,6 +95,14 @@ jobs:
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
 
+    - name: Apply patches(安装补丁)   
+      run: |
+        git config --global user.name "OpenWrt Builder"
+        git config --global user.email "buster-openwrt@ovvo.uk"
+        cp $PATCHES_FILE_1 $OPENWRT_PATH/feeds/luci
+        cd $OPENWRT_PATH/feeds/luci
+        git am 0001-show-soc-status-on-luci.patch
+        
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
