@@ -195,6 +195,12 @@ git clone --depth=1 https://github.com/ximiTech/msd_lite package/msd_lite
 
 git clone  https://github.com/gdy666/luci-app-lucky.git package/lucky
 
+git clone -b master https://github.com/coolsnowwolf/luci.git package/lean/luci
+mv package/lean/luci/applications/luci-app-cpufreq package/lean/
+rm -rf package/lean/luci
+wget https://github.com/coolsnowwolf/luci/raw/master/luci.mk
+mv luci.mk package/
+
 # Add po2lmo
 #git clone https://github.com/openwrt-dev/po2lmo.git
 #pushd po2lmo
